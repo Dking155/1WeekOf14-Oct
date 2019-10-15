@@ -19,7 +19,7 @@ def archimedes(numSides):
 print(archimedes(8))
 print(archimedes(16))
 
-for sides in range (8, 100, 8):
+for sides in range(8, 100, 8):
     print(sides, archimedes(sides))
 
 # experiment with the loop above alongside with the actual value of pi. How many
@@ -46,3 +46,15 @@ print(acc)
 # fibonacci number.
 # Write a function to compute the Nth fibonacci number, where N is a parameter.
 # you may assume that N will be greater than or equal to 3
+
+acc = 0
+for x in range(1, 100):
+    acc = acc + x
+print(acc)
+
+
+acc = 0
+for x in range(1, 50):
+    acc = acc + x
+    print(acc)
+

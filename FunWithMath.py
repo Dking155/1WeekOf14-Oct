@@ -52,7 +52,6 @@ for x in range(1, 100):
     acc = acc + x
 print(acc)
 
-
 acc = 0
 for x in range(1, 50):
     acc = acc + x
@@ -103,7 +102,6 @@ else:
 
 print(a, b, c)
 
-
 d = 55
 e = 72
 f = 44
@@ -122,17 +120,41 @@ else:
 print(ans)
 
 
-def montePi(numDarts):
+
+def showMontePi(numDarts):
+    import turtle
+    scn = turtle.Screen()
+    t = turtle.Turtle()
+
+    scn.setworldcoordinates(-2, -2, 2, 2)
+
+    t.penup()
+    t.goto(-1, 0)
+    t.pendown()
+    t.goto(1, 0)
+
+    t.penup()
+    t.goto(0, 1)
+    t.pendown()
+    t.goto(0, -1)
+
+    inCircle = 0
     inCircle = 0
     for i in range(numDarts):
         x = random.random()
         y = random.random()
 
-        distance = math.sqrt(x**2 + y**2)
+        distance = math.sqrt(x ** 2 + y ** 2)
+
+        t.goto(x, y)
 
         if distance <= 1:
             inCircle = inCircle + 1
-            pi = inCircle / numDarts * 4
-            return pi
+            t.color("blue")
+        else:
+            t.color("red")
 
-print(montePi(100))
+            t.dot()
+
+    pi = inCircle / numDarts * 4
+    scn.exitonclick()

@@ -102,3 +102,37 @@ else:
     c = 1050
 
 print(a, b, c)
+
+
+d = 55
+e = 72
+f = 44
+ans = 0
+
+if d > e:
+    ans = 12
+else:
+    if d == e:
+        ans = 50
+    else:
+        if f < d * e:
+            ans = 100
+        else:
+            ans = 75
+print(ans)
+
+
+def montePi(numDarts):
+    inCircle = 0
+    for i in range(numDarts):
+        x = random.random()
+        y = random.random()
+
+        distance = math.sqrt(x**2 + y**2)
+
+        if distance <= 1:
+            inCircle = inCircle + 1
+            pi = inCircle / numDarts * 4
+            return pi
+
+print(montePi(100))
